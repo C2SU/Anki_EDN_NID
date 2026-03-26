@@ -70,5 +70,4 @@ Cet addon fait partie de l'écosystème **Anki EDN** et s'intègre avec le syst�
 Pour toute question, suggestion ou rapport de bug :
 - [Anki EDN](https://tools.c2su.org/Anki_EDN/book/)
 - [Discord Anki EDN](https://discord.gg/2A7zHAEBYt)
-- [GitHub](https://github.com/C2SU/Anki_EDN_NID)
-- [AnkiWeb](https://ankiweb.net/shared/info/445658251)
+- [AnkiWeb](https://ankiweb.net/shared/info/2135076010)
