@@ -6,7 +6,7 @@ from aqt import mw
 from aqt.qt import QAction, qconnect
 from aqt.utils import askUser, showInfo, showCritical
 
-from .edn_menu.shared_menu import register_module, register_action, should_initialize_module
+# Imports are deferred to init_addon() to avoid early-loading issues
 
 def migrate_nids():
     addon_path = os.path.dirname(__file__)
@@ -153,11 +153,18 @@ def migrate_nids():
 
 
 def init_addon():
+    # Deferred import to ensure the package structure is fully recognized by Anki
+    try:
+        from .edn_menu.shared_menu import register_module, register_action, should_initialize_module
+    except ImportError:
+        # Fallback if the package is loaded in a way that relative imports fail
+        from .edn_menu import register_module, register_action, should_initialize_module
+
     # Ajout d'une option dans le menu 'Outils'
     register_module("anki_edn_nid", "Anki EDN - nid", "Migration de notes")
 
     if should_initialize_module("anki_edn_nid"):
-        register_action("anki_edn_nid", "🛠️ Anki EDN - nid (Migration)", migrate_nids)
+           register_action("anki_edn_nid", "Réparer les NID", migrate_nids)
 
 from aqt import gui_hooks
 gui_hooks.profile_did_open.append(init_addon)

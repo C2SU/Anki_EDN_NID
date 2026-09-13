@@ -2,9 +2,13 @@
 
 ## 📋 Description
 
-**Anki EDN NID** est un addon Anki qui permet de les identifiants de notes (NID) pour mieux profiter de [Anki EDN](https://tools.c2su.org/Anki_EDN/book.html). 
+**Anki EDN NID** est un addon Anki qui permet de les identifiants de notes (NID) pour mieux profiter de [Anki EDN](https://c2su.github.io/Anki_EDN/Anki_EDN.html). 
 Cet addon est conçu pour les environnements d'apprentissage collaboratifs où plusieurs utilisateurs doivent maintenir une cohérence dans les identifiants de leurs cartes Anki.
+##. Pour réparer les NID
 
+Après installation et redémarage, allez dans le menu **Anki EDN** (dans la barre de menu principale d'Anki), puis cliquez sur **⚠️ Réparer les NID**.
+
+Cela lancera la procédure de correction des identifiants de notes.
 ## 🎯 Fonctionnalité
 
 L'addon fournit un outil de migration qui :
@@ -12,6 +16,7 @@ L'addon fournit un outil de migration qui :
 - **Utilise un fichier de mapping** : Lit un fichier `nid_mapping.txt` contenant la correspondance GUID → NID administrateur
 - **Gère les conflits** : Identifie et rapporte les conflits d'identifiants
 - **Génère des logs détaillés** : Crée un fichier de debug pour suivre tous les changements effectués
+
 
 ## 🚀 Utilisation
 
@@ -31,9 +36,11 @@ Exemple :
 abc123def456,1652841200001
 xyz789uva345,1652841200002
 ```
-Automatisable dans la console de debugging anki.
+Automatisable dans la console de debugging Anki.
 
-### 2. Résultats et logs
+
+
+### 3. Résultats et logs
 
 À la fin de la migration, vous verrez :
 
@@ -55,7 +62,7 @@ Le fichier `nid_mapping.txt` doit être placé dans le répertoire de l'addon et
 ## 📝 Version
 
 - **Version** : 1.0.0
-- **Package** : EDN_sync_NID
+- **Package** : Anki_EDN_nid
 
 ## 🔗 Intégration EDN
 
@@ -68,6 +75,7 @@ Cet addon fait partie de l'écosystème **Anki EDN** et s'intègre avec le syst�
 ## 💡 Support
 
 Pour toute question, suggestion ou rapport de bug :
-- [Anki EDN](https://tools.c2su.org/Anki_EDN/book/)
+- [Anki EDN](https://c2su.github.io/Anki_EDN/Anki_EDN.html)
 - [Discord Anki EDN](https://discord.gg/2A7zHAEBYt)
-- [AnkiWeb](https://ankiweb.net/shared/info/2135076010)
+- [GitHub](https://github.com/C2SU/Anki_EDN_NID)
+- [AnkiWeb](https://ankiweb.net/shared/info/445658251)

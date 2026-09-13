@@ -1,6 +1,6 @@
 {
-    "name": "EDN Sync NID",
-    "package": "EDN_sync_NID",
+    "name": "Anki EDN NID",
+    "package": "Anki_EDN_nid",
     "dependencies": [],
     "human_version": "1.0.0"
 }
