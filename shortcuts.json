@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Ficello/Anki-Customize-Keyboard-Shortcuts/main/schemas/shortcuts-v1.json",
+  "schema_version": 1,
+  "addon_name": "Anki EDN - NID Integrite",
+  "shortcuts": [
+    {
+      "id": "anki_edn_nid.repair",
+      "label": "Reparer et synchroniser les NID",
+      "scope": "main",
+      "default": "",
+      "fallbacks": ["Ctrl+Alt+N"]
+    }
+  ]
+}
