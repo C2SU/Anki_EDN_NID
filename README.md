@@ -1,81 +1,60 @@
-# Anki EDN - NID Migration
+# Anki EDN - Synchronisation des NID
 
-## 📋 Description
+Realignez les identifiants uniques de vos notes EDN en un clic pour garantir la coherence de vos liaisons et de vos liens.
 
-**Anki EDN NID** est un addon Anki qui permet de les identifiants de notes (NID) pour mieux profiter de [Anki EDN](https://c2su.github.io/Anki_EDN/Anki_EDN.html). 
-Cet addon est conçu pour les environnements d'apprentissage collaboratifs où plusieurs utilisateurs doivent maintenir une cohérence dans les identifiants de leurs cartes Anki.
-##. Pour réparer les NID
-
-Après installation et redémarage, allez dans le menu **Anki EDN** (dans la barre de menu principale d'Anki), puis cliquez sur **⚠️ Réparer les NID**.
-
-Cela lancera la procédure de correction des identifiants de notes.
-## 🎯 Fonctionnalité
-
-L'addon fournit un outil de migration qui :
-
-- **Utilise un fichier de mapping** : Lit un fichier `nid_mapping.txt` contenant la correspondance GUID → NID administrateur
-- **Gère les conflits** : Identifie et rapporte les conflits d'identifiants
-- **Génère des logs détaillés** : Crée un fichier de debug pour suivre tous les changements effectués
-
-
-## 🚀 Utilisation
-
-### 1. Préparation du fichier de mapping
-
-Créez un fichier `nid_mapping.txt` dans le répertoire de l'addon avec le format suivant :
-
-```
-GUID1,NID_ADMIN_1
-GUID2,NID_ADMIN_2
-GUID3,NID_ADMIN_3
-```
-
-Exemple :
-
-```
-abc123def456,1652841200001
-xyz789uva345,1652841200002
-```
-Automatisable dans la console de debugging Anki.
-
-
-
-### 3. Résultats et logs
-
-À la fin de la migration, vous verrez :
-
-- ✅ **Mis à jour** : nombre de notes dont le NID a été changé
-- 🆗 **Déjà corrects** : nombre de notes ayant déjà le bon NID
-- ❌ **GUIDs non trouvés** : nombre de GUIDs du fichier mapping introuvables dans votre collection
-- ⚠️ **Conflits** : nombre de conflits détectés (NID de destination déjà occupé)
-
-Un fichier `migration_debug.log` est créé dans le répertoire de l'addon avec tous les détails.
-
-## 📁 Structure du fichier mapping
-
-Le fichier `nid_mapping.txt` doit être placé dans le répertoire de l'addon et contenir :
-
-- **Une entrée par ligne**
-- **Format** : `GUID,NID_ADMIN`
-- Les lignes vides et mal formatées sont ignorées
-
-## 📝 Version
-
-- **Version** : 1.0.0
-- **Package** : Anki_EDN_nid
-
-## 🔗 Intégration EDN
-
-Cet addon fait partie de l'écosystème **Anki EDN** et s'intègre avec le système de menu EDN pour une meilleure organisation des addons.
+Dans le cadre du cursus EDN / ECNi, les paquets officiels et collaboratifs reposent sur des identifiants administratifs stables (NID). Cet add-on permet d'harmoniser les NID de votre collection locale avec la reference officielle sans alterer votre progression ni vos historiques d'apprentissage.
 
 ---
 
-**Besoin d'aide ?** Consultez le fichier log `migration_debug.log` généré après chaque migration pour diagnostiquer les problèmes.
+## Quand et Comment Utiliser cet Add-on ?
 
-## 💡 Support
+| Etape | Intitule | Action a realiser |
+| :--- | :--- | :--- |
+| **Etape 1** | **Declenchement Securise** | Apres l'installation et le redemarrage d'Anki, rendez-vous dans le menu superieur : `Anki EDN > Reparer les NID`. |
+| **Etape 2** | **Rapport de Conformite** | L'outil scanne votre collection, applique les alignements requis et affiche un bilan transparent : nombre de notes mises a jour, deja conformes ou ecarts eventuels. |
 
-Pour toute question, suggestion ou rapport de bug :
-- [Anki EDN](https://c2su.github.io/Anki_EDN/Anki_EDN.html)
-- [Discord Anki EDN](https://discord.gg/2A7zHAEBYt)
-- [GitHub](https://github.com/C2SU/Anki_EDN_NID)
-- [AnkiWeb](https://ankiweb.net/shared/info/445658251)
+---
+
+## Garanties de Securite
+
+- **Integrite absolue de la progression** : La modification d'un NID administrativement remappe ne reinitialise jamais les intervalles FSRS / SM-2, ni les dates de revue, ni les historiques d'etude.
+- **Journal d'audit detaille** : Chaque operation est consignee ligne par ligne dans `migration_debug.log` a la racine du dossier de l'add-on.
+- **Detection proactive des conflits** : Si un identifiant cible est deja attribue a une note locale differente, l'operation est isolee et signalee sans ecrasement sauvage.
+
+---
+
+## Format du Fichier de Mapping (`nid_mapping.txt`)
+
+Si vous etes administrateur de deck ou tuteur et souhaitez generer un plan d'alignement pour votre promotion, placez un fichier `nid_mapping.txt` a la racine de l'add-on :
+
+```text
+GUID_ORIGINE,NID_CIBLE
+abc123def456,1652841200001
+xyz789uva345,1652841200002
+```
+
+Les lignes vides ou mal formatees sont automatiquement ignorees.
+
+---
+
+## Installation
+
+### Via AnkiWeb (Recommande)
+1. Dans Anki, ouvrez le menu `Outils > Modules complementaires > Acquerir des modules complementaires...`
+2. Saisissez le code : **2135076010**
+3. Redemarrez Anki.
+
+### Depuis le fichier .ankiaddon
+1. Telechargez le fichier `.ankiaddon` depuis les releases locales ou GitHub.
+2. Dans Anki, ouvrez `Outils > Modules complementaires > Installer depuis un fichier...`
+3. Selectionnez le package et redemarrez Anki.
+
+---
+
+## Assistance et Documentation
+
+- Code d'installation AnkiWeb : **2135076010**
+- Documentation officielle EDN : [Portail Anki EDN](https://c2su.github.io/Anki_EDN/Anki_EDN.html)
+- Communaute d'entraide : [Serveur Discord EDN](https://discord.gg/2A7zHAEBYt)
+- Code source : [Depot GitHub C2SU/Anki_EDN_NID](https://github.com/C2SU/Anki_EDN_NID)
+- Integration : Fait partie integrante de la suite logicielle Anki EDN
